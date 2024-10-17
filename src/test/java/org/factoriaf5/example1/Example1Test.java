@@ -3,7 +3,7 @@ package org.factoriaf5.example1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
-import java.util.Collections;
+//import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -84,29 +84,29 @@ public class Example1Test {
 
     @Test
     public void testFactorialNegativeNumber() {
-        int numb = -5;
+        int num = -5;
         assertThrows(IllegalArgumentException.class, () -> {
-            example.factorial(numb);
+            example.factorial(num);
         });
     }
     @Test
     public void testEsPrimo() {
-        int numb = 7;
-        boolean result = example.esPrimo(numb);
+        int num = 7;
+        boolean result = example.esPrimo(num);
         assertTrue(result);
     }
 
     @Test
     public void testEsPrimoNegativeNumber() {
-        int numb = -7;
-        boolean result = example.esPrimo(numb);
+        int num = -7;
+        boolean result = example.esPrimo(num);
         assertFalse(result);
     }
 
     @Test
     public void testNoEsPrimoBiggerThanFour(){
-        int numb = 8;
-        boolean result = example.esPrimo(numb);
+        int num = 8;
+        boolean result = example.esPrimo(num);
         assertFalse(result);
     }
             @Test
