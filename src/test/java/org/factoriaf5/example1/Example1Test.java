@@ -77,16 +77,16 @@ public class Example1Test {
     }
     @Test
     public void testFactorial() {
-        int number = 4;
-        long result = example.factorial(number);
+        int num = 4;
+        long result = example.factorial(num);
         assertEquals(24,result);
     }
 
     @Test
     public void testFactorialNegativeNumber() {
-        int number = -5;
+        int numb = -5;
         assertThrows(IllegalArgumentException.class, () -> {
-            example.factorial(number);
+            example.factorial(numb);
         });
     }
     @Test
