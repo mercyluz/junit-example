@@ -38,15 +38,15 @@ public class Example1Test {
 @Test
      public void testCheckPositivo() {
       //  given
-       int number = 4;
+       int number = 7;
        boolean result = example.checkPositivo(number);
        assertTrue(result);
     }
     @Test
     public void testCheckPositivoError() {
-     int number = -4;
+     int numb = -7;
     assertThrows(IllegalArgumentException.class, () -> {
-        example.checkPositivo(number);
+        example.checkPositivo(numb);
     });
         //conjunto de
     }
@@ -89,12 +89,29 @@ public class Example1Test {
             example.factorial(number);
         });
     }
-    
+    @Test
+    public void testEsPrimo() {
+        int numb = 7;
+        boolean result = example.esPrimo(numb);
+        assertTrue(result);
+    }
+
+    @Test
+    public void testEsPrimoNegativeNumber() {
+        int numb = -7;
+        boolean result = example.esPrimo(numb);
+        assertFalse(result);
+    }
+
+    @Test
+    public void testNoEsPrimoBiggerThanFour(){
+        int numb = 8;
+        boolean result = example.esPrimo(numb);
+        assertFalse(result);
+    }
             @Test
             public void testMensajeConRetraso() throws InterruptedException {
-                  
-                assertEquals("Listo después de retraso", example.mensajeConRetraso());
-            
+              assertEquals("Listo después de retraso", example.mensajeConRetraso());         
 }
 
 @Test
@@ -105,13 +122,11 @@ public class Example1Test {
         assertEquals(listaEsperada, example.convertirAString(listaEnteros), "La lista convertida debería contener las cadenas '1', '2', '3' y '4'");
     }
     
-       
-    
         @Test
     public void testcalcularMedia() {
         List<Integer> list = Arrays.asList(2,5,11);
         double result = example.calcularMedia(list);
-        assertEquals(        6, result);
+        assertEquals(6, result);
     }
 
     @Test
